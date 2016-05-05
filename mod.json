@@ -1,0 +1,6 @@
+{
+    "BaseDir": ".",
+    "IsDevelopment": true,
+    "Name": "Nexus Uploader",
+    "Project": "NexusUploader.csproj"
+}
