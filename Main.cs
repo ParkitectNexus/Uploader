@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Parkitect.UI;
+using UnityEngine;
 
 namespace NexusUploader
 {
@@ -9,8 +10,6 @@ namespace NexusUploader
             GameObject go = new GameObject("NexusUploader");
 
             go.AddComponent<Uploader>();
-
-            ContentProviderManager.Instance.registerContentProvider(new NexusContentProvider());
         }
 
         public void onDisabled()

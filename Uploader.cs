@@ -17,7 +17,12 @@ namespace NexusUploader
 
         public void Awake()
         {
-            Instance = this;
+            if (Instance == null)
+            {
+                Instance = this;
+
+                ContentProviderManager.Instance.registerContentProvider(new NexusContentProvider());
+            }
         }
 
         public void Upload(ContentProviderItem item)
