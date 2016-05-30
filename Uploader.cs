@@ -35,7 +35,7 @@ namespace NexusUploader
             // Create a Web Form
             WWWForm form = new WWWForm();
 
-            form.AddBinaryData("resource", File.ReadAllBytes(item.getLocation()), System.IO.Path.GetFileName(item.getLocation()), "image/png");
+            form.AddBinaryData("resource", File.ReadAllBytes(item.gameContent.path), System.IO.Path.GetFileName(item.gameContent.path), "image/png");
             
             WWW w = new WWW("http://parkitectnexus.com/api/assets/manage/upload-asset", form.data, form.headers);
 

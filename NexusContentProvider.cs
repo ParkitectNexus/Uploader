@@ -8,7 +8,7 @@ namespace NexusUploader
         {
             Uploader.Instance.OnUploadComplete += item =>
             {
-                storeFinishedHandler(this, item, true, "Uploaded");
+                storeFinishedHandler(this, item.gameContent, true, "Uploaded");
 
                 Uploader.Instance.OnUploadComplete = null;
             };
@@ -16,11 +16,11 @@ namespace NexusUploader
             Uploader.Instance.Upload(contentProviderItem);
         }
 
-        public void unsubscribe(ContentProviderItem contentProviderItem, ContentProviderTransactionFinishedHandler unsubscribeFinishedHandler)
+        public void unsubscribe(AbstractGameContent gameContent, ContentProviderTransactionFinishedHandler unsubscribeFinishedHandler)
         {
-            unsubscribeFinishedHandler(this, contentProviderItem, true, "Can't unsubscribe yet from ParkitectNexus.");
+            unsubscribeFinishedHandler(this, gameContent, true, "Can't unsubscribe yet from ParkitectNexus.");
         }
-
+        
         public RectTransform getProviderSpecificInfoPanel()
         {
             return new RectTransform();
